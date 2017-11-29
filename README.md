@@ -6,8 +6,8 @@ a 2V sealed lead acid battery and driving the following two loads:
 ## System Specifications
 * Solar Panel Power = 5W
 * Battery Voltage = 2V
-* Maximum Current = GIVE IT
-* 
+* Battery Capacity = 2.5Ah
+* Switching Frequency = 50kHz
 ## Requirements for this Project
 * Arduino Uno
 * Arduino Ethernet Shield 2
@@ -21,4 +21,7 @@ a 2V sealed lead acid battery and driving the following two loads:
 The main part of the MPPT charge controller, is, as seen in the schematic, its buck converter.
 For this project, the frequency of that converter was set to be 50kHz. Note that, in general, the
 higher the switching frequency the smaller the size of the converter's capacitor and inductor, but
-the higher the switching losses. NOW GIVE THE FIRMULAS USED TO DERIVE THE INDUCTOR AND THE CAPACITOR.
+the higher the switching losses. At this stage, the calculation of the inductor and the capacitor is described below:
+### Inductor Calculation
+Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is an ideal one (zero ON resistance, infinite OFF resistance and zero switching time), in order to maintain the converter in continuous mode it is true that:
+* L>(Vo*(1-Dmin))/(2Io*f)=(2*(1-(2/10.75)))/(2*(5/2) * 50000=15.4μF. Thus, a 30μF Inductor was chosen. Note that Dmin=2/10.75 (where 10.75 is the open circuit voltage of the solar panel) and Io=Ppanel/Battery_Voltage.
