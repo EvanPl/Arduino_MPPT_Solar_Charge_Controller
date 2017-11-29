@@ -30,3 +30,4 @@ Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is
 Note that a much bigger inductor than that found from the equation was selected as the inductor size controls the current slope. As a result, a smaller inductor means that the circuit is closer to discontinuous mode (which is undesired here).
 ### Capacitor Calculation
 The capacitor is chosen to keep the ripple of the output voltage Vo to an acceptable value. Typically, ΔVο (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
+![alt text]()
