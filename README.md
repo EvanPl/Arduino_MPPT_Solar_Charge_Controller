@@ -5,6 +5,7 @@ a 2V sealed lead acid battery and driving the following two loads:
 * A Mobile Phone (rated at 5V down to 0.5A).
 ## System Specifications
 * Solar Panel Power = 5W
+* Solar Panel Open Circuit Voltage (Voc) = 10.75V
 * Battery Voltage = 2V
 * Battery Capacity = 2.5Ah
 * Switching Frequency = 50kHz
@@ -24,4 +25,4 @@ higher the switching frequency the smaller the size of the converter's capacitor
 the higher the switching losses. At this stage, the calculation of the inductor and the capacitor is described below:
 ### Inductor Calculation
 Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is an ideal one (zero ON resistance, infinite OFF resistance and zero switching time), in order to maintain the converter in continuous mode it is true that:
-* L>(Vo*(1-Dmin))/(2Io*f)=(2*(1-(2/10.75)))/(2*(5/2) * 50000=15.4μF. Thus, a 30μF Inductor was chosen. Note that Dmin=2/10.75 (where 10.75 is the open circuit voltage of the solar panel) and Io=Ppanel/Battery_Voltage.
+![alt text]()
