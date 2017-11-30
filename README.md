@@ -9,7 +9,7 @@ a 2V sealed lead acid battery and driving the following two loads:
 * Battery Voltage = 2V
 * Battery Capacity = 2.5Ah
 * Switching Frequency = 50kHz
-## Requirements for this Project
+## &#x1F537; Requirements for this Project
 * Arduino Uno
 * Arduino Ethernet Shield 2
 * Ethernet cable
@@ -20,9 +20,9 @@ a 2V sealed lead acid battery and driving the following two loads:
 * HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module
 * The reset of components can be found from the schematic below
 ## PLACE SCHEMATIC PICTURE HERE
-## Solar Panel and Battery voltages sensing
+## &#x1F537; Solar Panel and Battery voltages sensing
 In order to sense the solar panel voltage a voltage divider was used, as this voltage can be greater than 5V which is the maximum voltage that can be applied to the Arduino. On the other hand, the maximum battery voltage, as described in the datasheet, is approximately 2.25V and thus we directly read it using a Kelvin connection (as shown in the schematic) for better accuracy.
-## Buck Converter design
+## &#x1F537; Buck Converter design
 The main part of the MPPT charge controller, is, as seen in the schematic, its buck converter.
 For this project, the frequency of that converter was set to be 50kHz. Note that, in general, the
 higher the switching frequency the smaller the size of the converter's capacitor and inductor, but
@@ -37,9 +37,9 @@ The capacitor is chosen to keep the ripple of the output voltage Vo to an accept
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
 ### MOSFET Selection
 The MOSFET selected in the design can withstand both the maximum load current (approx. 3A) as well as the maximum voltage which is 10.75V.
-## Phone Charger
+## &#x1F537; Phone Charger
 The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A), whenever the user wants it, as long as the voltage across the 2V sealed lead acid battery is greater or equal to 2V (remember that the battery is fully charged at 2.25V). For this purpose, a HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module is used.
-## LCD display
+## &#x1F537; LCD display
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in the Figure below.
 ## PLACE LCD DISPLAY PICTURE HERE -- in MPPT mode
 The **first** column, displays the voltage across the solar panel as well as its output current and power (in W).
@@ -49,11 +49,11 @@ The **second** column, displays the battery voltage, its charging state (as expl
 The **third** column, shows the PWM of the PMOS of the buck converter (in %) as well as the status of the 2V LED load.
 
 Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not sufficient battery capacity to charge the phone* is printed on the LCD.
-## Monitoring the system over the internet
+## &#x1F537; Monitoring the system over the internet
 With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
-## Python for plotting the solar panel and battery voltages
+## &#x1F537; Python for plotting the solar panel and battery voltages
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
-## Controlling the circuit over the phone.
+## &#x1F537; Controlling the circuit over the phone.
 The user of this system has the ability to control the circuit over the mobile phone (remotely). This is achieved by using an application named *Blynk* (available both on the App and Google/Android stores) which communicates with the Arduino via the Ethernet Shield. There are three different buttons/options:
 * **Reset** button. If pressed, the user remotely resets the circuit.
 * **MPPT** button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section" )
@@ -61,7 +61,7 @@ The user of this system has the ability to control the circuit over the mobile p
 
 The Blynk application with those three buttons is shown below.
 ## GIVE IMAGE OG BLYNK APP with the 3 buttons
-## Circuit Operation
+## &#x1F537; Circuit Operation
 There are three circuuit states:
 #### 1. Reset
 State, for resetting the circuit. The circuit enters this state when the user either presses the *Reset* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section)
@@ -87,5 +87,5 @@ State, in which the circuit operates as a maximum power point tracking solar cha
    **Moreover, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**   
 #### 3. Phone Charging
 In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
-## Soldering and Enclosure
+## &#x1F537; Soldering and Enclosure
 ## TO BE COMPLETED.
