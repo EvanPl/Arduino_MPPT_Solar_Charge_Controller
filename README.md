@@ -73,7 +73,8 @@ There are three states that the circuit can be:
    3. ***no_sun***. In this case there is no sufficient sunlight to charge the battery (or remain it fully charged) and thus the buck      converter is OFF. As far as the 2V LED load is concerned, if the battery voltage is between its minimum and maximum values then this load   will turn ON, discharging the battery, something which, apart from the LCD, is indicated by a red LED turned on (powered from the arduino). Clearly, if the battery is discharged below 1.6V, then we enter *no_bat* substate, waiting for the solar intensity to increase sufficiently and recharge the battery.
 
    4. ***Bulk***. This is the first of the two charging substates and the one where the the MPPT algorithm, **Perturb and observe** takes place. It occurs when there is sufficient sunlight and the battery voltage is between 1.6V and 2V (float voltage). The initial PWM used in the Perturb and observe algorithm is 30% and its flowchart (based on which the code was written) is given below.
-   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
+   
+   ![alt text]()
   
    
 * **Phone Charging**
