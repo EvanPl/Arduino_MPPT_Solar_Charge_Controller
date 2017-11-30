@@ -65,7 +65,7 @@ There are three states that the circuit can be:
 * **MPPT** state, in which the circuit operates as a maximum power point tracking solar charge controller driving a 2V LED load. The circuit enters this state when the user either presses the MPPT button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section). This charge controller operates as follows:
 * The circuit reads the solar panel and battery voltages, the solar panel output current and power (*read_data* function).
 * Then the circuit decides on which substate to enter (*mode_select* function). There are five different substates given below:
-    1.
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.
 * **Phone Charging**
 ## Soldering and Enclosure
 ## TO BE COMPLETED.
