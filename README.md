@@ -3,7 +3,7 @@ An arduino based Maximum Power Point Tracking (MPPT) solar charge controller cir
 a 2V sealed lead acid battery and driving the following two loads:
 * A 2V LED
 * A Mobile Phone (rated at 5V down to 0.5A).
-## | System Specifications | 
+| System Specifications | 
 * Solar Panel Power = 5W
 * Solar Panel Open Circuit Voltage (Voc) = 10.75V
 * Battery Voltage = 2V
