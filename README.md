@@ -42,9 +42,12 @@ The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A), w
 ## LCD display
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in the Figure below.
 ## PLACE LCD DISPLAY PICTURE HERE -- in MPPT mode
-* The **first** column, displays the voltage across the solar panel as well as its output current and power (in W).
-* The **second** column, displays the battery voltage, its charging state (as explained in the "*Circuit Operation* section") together with the percentage of the battery.
-* The **third** column, shows the PWM of the PMOS of the buck converter (in %) as well as the status of the 2V LED load.
+The **first** column, displays the voltage across the solar panel as well as its output current and power (in W).
+
+The **second** column, displays the battery voltage, its charging state (as explained in the "*Circuit Operation* section") together with the percentage of the battery.
+
+The **third** column, shows the PWM of the PMOS of the buck converter (in %) as well as the status of the 2V LED load.
+
 Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not sufficient battery capacity to charge the phone* is printed on the LCD.
 ## Monitoring the system over the internet
 With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
