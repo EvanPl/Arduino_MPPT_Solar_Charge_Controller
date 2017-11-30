@@ -72,7 +72,7 @@ There are three states that the circuit can be:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. ***no_sun***. In this case there is no sufficient sunlight to charge the battery (or remain it fully charged) and thus the buck converter is OFF. As far as the 2V LED load is concerned, if the battery voltage is between its minimum and maximum values then this load will turn ON, discharging the battery, something which, apart from the LCD, is indicated by a red LED turned on (powered from the arduino). Clearly, if the battery is discharged below 1.6V, then we enter *no_bat* substate, waiting for the solar intensity to increase sufficiently and recharge the battery.
 
-*nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. ***Bulk***. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. ***Bulk***. 
 * **Phone Charging**
 ## Soldering and Enclosure
 ## TO BE COMPLETED.
