@@ -62,10 +62,10 @@ The user of this system has the ability to control the circuit over the mobile p
 The Blynk application with those three buttons is shown below.
 ## GIVE IMAGE OG BLYNK APP with the 3 buttons
 ## Circuit Operation
-There are three states that the circuit can be:
-#### Reset
+There are three circuuit states:
+#### 1. Reset
 State, for resetting the circuit. The circuit enters this state when the user either presses the *Reset* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section)
-#### MPPT
+#### 2. MPPT
 State, in which the circuit operates as a maximum power point tracking solar charge controller driving a 2V LED load. The circuit enters this state when the user either presses the *MPPT* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section). This charge controller operates as follows:
 * The circuit reads the solar panel and battery voltages, the solar panel output current and power (*read_data* function).
 * Then, the circuit decides on which sub state to enter (*mode_select* function). There are five different sub states given below:
@@ -85,7 +85,7 @@ State, in which the circuit operates as a maximum power point tracking solar cha
    **Note that, in both charging states (bulk and Float) a green LED turns on (powered from the Arduino), indicating that the battery is charging.**
    
    **Moreover, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**   
-#### Phone Charging
+#### 3. Phone Charging
 In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
 ## Soldering and Enclosure
 ## TO BE COMPLETED.
