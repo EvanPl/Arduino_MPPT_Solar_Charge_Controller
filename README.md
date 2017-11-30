@@ -74,7 +74,8 @@ There are three states that the circuit can be:
 
    4. ***Bulk***. This is the first of the two charging substates and the one where the the MPPT algorithm, **Perturb and observe** takes place. It occurs when there is sufficient sunlight and the battery voltage is between 1.6V and 2V (float voltage). The initial PWM used in the Perturb and observe algorithm is 30% and its flowchart (based on which the code was written) is given below.
    
-   ![alt text]()
+   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Perturb%20and%20Observe%20flowchart.PNG)
+   
   
    
 * **Phone Charging**
