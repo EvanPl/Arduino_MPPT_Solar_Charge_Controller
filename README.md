@@ -73,3 +73,7 @@ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. *Bulk*.
 ## Soldering and Enclosure
 ## TO BE COMPLETED.
 
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This will appear with six space characters in front of it
+
