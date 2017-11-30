@@ -53,11 +53,20 @@ With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
 ## Controlling the circuit over the phone.
 The user of this system has the ability to control the circuit over the mobile phone (remotely). This is achieved by using an application named *Blynk* (available both on the App and Google/Android stores) which communicates with the Arduino via the Ethernet Shield. There are three different buttons/options:
-* Reset button. If pressed, the user remotely resets the circuit.
-* MPPT button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section" )
-* Phone button. if pressed and there is sufficient battery capacity the circuit charges a mobile phone.
+* **Reset** button. If pressed, the user remotely resets the circuit.
+* **MPPT** button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section" )
+* **Phone** button. if pressed and there is sufficient battery capacity the circuit charges a mobile phone.
+
 The Blynk application with those three buttons is shown below.
 ## GIVE IMAGE OG BLYNK APP with the 3 buttons
+## Circuit Operation
+There are three states that the circuit can be:
+* **Reset** state, for reseting the circuit. The circuit enters this state when the user either presses the Reset button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section)
+* **MPPT** state, in which the circuit operates as a maximum power point tracking solar charge controller driving a 2V LED load. The circuit enters this state when the user either presses the MPPT button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section). This charge controller operates as follows:
+* The circuit reads the solar panel and battery voltages, the solar panel output current and power (*read_data* function).
+* Then the circuit decides on which substate to enter (*mode_select* function). There are five different substates given below:
+  1.
+* **Phone Charging**
 ## Soldering and Enclosure
 ## TO BE COMPLETED.
 
