@@ -66,7 +66,7 @@ State, for reseting the circuit. The circuit enters this state when the user eit
 #### MPPT
 State, in which the circuit operates as a maximum power point tracking solar charge controller driving a 2V LED load. The circuit enters this state when the user either presses the MPPT button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section). This charge controller operates as follows:
 * The circuit reads the solar panel and battery voltages, the solar panel output current and power (*read_data* function).
-* Then the circuit decides on which substate to enter (*mode_select* function). There are five different substates given below:
+* Then, the circuit decides on which substate to enter (*mode_select* function). There are five different substates given below:
 
    1. ***no_bat***. This is the substate entered when the measured battery voltage is lower than the minimum one (1.6V). In such case, both      the buck converter and the loads are off, waiting for an appropriate battery to be connected.
 
@@ -80,7 +80,9 @@ State, in which the circuit operates as a maximum power point tracking solar cha
    
    5. ***Float***. In this charging substate the voltage on the battery is greater or equal to 2V (which means that the battery is 97.7%, or more, charged) and there is sufficient sunlight to charge the battery. As soon as we enter this state the PWM signal is set to 30%, to allow the solar panel to either charge the battery in a slower rate or keep it fully charged at all times.
    
-   **Note that in both charging states (bulk and Float) a green LED turns on (powered from the arduino), indicating that the battery is charging.**
+   **Note that, in both charging states (bulk and Float) a green LED turns on (powered from the arduino), indicating that the battery is charging.**
+   **Moreover, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**
+
    
 #### Phone Charging
 ## Soldering and Enclosure
