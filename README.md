@@ -35,6 +35,7 @@ Note that a much bigger inductor than that found from the equation was selected 
 ### Capacitor Calculation
 The capacitor is chosen to keep the ripple of the output voltage Vo to an acceptable value. Typically, ΔVο (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
+FIGURE 1
 ### MOSFET Selection
 The MOSFET selected in the design can withstand both the maximum load current (approx. 3A) as well as the maximum voltage which is 10.75V.
 ## &#x1F537; `Phone Charger`
