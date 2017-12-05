@@ -6,8 +6,9 @@ a 2V sealed lead acid battery and driving the following two loads:
 ## &#x1F537; `System Specifications` 
 * Solar Panel Power = 5W
 * Solar Panel Open Circuit Voltage (Voc) = 10.75V (Under STC)
-* Battery Voltage = 2V
+* Battery Nominal Voltage = 2V
 * Battery Capacity = 2.5Ah
+* Battery Type = Sealed Lead Acid Rechargarble Battery
 * Switching Frequency = 50kHz
 ## &#x1F537; `Requirements for this Project`
 * Arduino Uno
