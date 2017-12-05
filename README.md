@@ -85,8 +85,8 @@ State, in which the circuit operates as a maximum power point tracking solar cha
 
 The bulk sub state occurs when there is sufficient sunlight and the battery voltage is between 1.6V and 2V (float voltage). Last but not least, the initial PWM signal used in the Perturb and Observe algorithm is 30%.
 
-  ![alt text]()
-*Figure 3*
+  ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Perturb%20and%20Observe%20Algorithm%20flowchart%20and%20a%20typical%20P%20vs%20V%20solar%20panel%20curve.PNG)
+*Figure 6: Flowchart of the "Perturb and Observe Algorithm"* *Figure 7: Typical "Power vs. Voltage" curve of a solar panel*
   
   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Power%20and%20Current%20vs.%20Voltage%20of%20the%20Panel%20used%20in%20this%20project.PNG)
     
