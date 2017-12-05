@@ -44,7 +44,8 @@ The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in Figure 2 below.
 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/LCD%20in%20MPPT%20state.PNG)
-*LCD in MPPT state*
+
+*Figure 2: LCD in MPPT state*
 
 The **first** column, displays the voltage across the solar panel as well as its output current (A) and power (W).
 
@@ -87,6 +88,7 @@ State, in which the circuit operates as a maximum power point tracking solar cha
 The bulk sub state occurs when there is sufficient sunlight and the battery voltage is between 1.6V and 2V (float voltage). Last but not least, the initial PWM signal used in the Perturb and Observe algorithm is 30%.
 
   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Perturb%20and%20Observe%20Algorithm%20flowchart%20and%20a%20typical%20P%20vs%20V%20solar%20panel%20curve.PNG)
+
 *Figure 6: Flowchart of the "Perturb and Observe Algorithm"*____________*Figure 7: Typical "Power vs. Voltage" curve of a solar panel*
   
   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Power%20and%20Current%20vs.%20Voltage%20of%20the%20solar%20panel%20used%20in%20this%20project.PNG)
