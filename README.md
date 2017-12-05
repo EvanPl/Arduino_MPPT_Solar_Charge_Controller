@@ -43,7 +43,8 @@ The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1
 ## &#x1F537; `LCD display`
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in Figure 2 below.
 
-![alt text]()
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/LCD in MPPT state.PNG)
+*LCD in MPPT state*
 
 The **first** column, displays the voltage across the solar panel as well as its output current (A) and power (W).
 
