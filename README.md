@@ -44,7 +44,7 @@ An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circui
 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/LCD.PNG)
 
-The **first** column, displays the voltage across the solar panel as well as its output current and power (in W).
+The **first** column, displays the voltage across the solar panel as well as its output current (A) and power (W).
 
 The **second** column, displays the battery voltage, its charging state (as explained in the "*Circuit Operation* section") together with the percentage of the battery.
 
