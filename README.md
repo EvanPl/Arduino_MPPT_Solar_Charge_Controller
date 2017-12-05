@@ -5,7 +5,7 @@ a 2V sealed lead acid battery and driving the following two loads:
 * A Mobile Phone (rated at 5V down to 0.5A).
 ## &#x1F537; `System Specifications` 
 * Solar Panel Power = 5W
-* Solar Panel Open Circuit Voltage (Voc) = 10.75V
+* Solar Panel Open Circuit Voltage (Voc) = 10.75V (Under STC)
 * Battery Voltage = 2V
 * Battery Capacity = 2.5Ah
 * Switching Frequency = 50kHz
