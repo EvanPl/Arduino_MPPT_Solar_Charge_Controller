@@ -43,7 +43,7 @@ The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1
 ## &#x1F537; `LCD display`
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in Figure 2 below.
 
-![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/LCD.PNG)
+![alt text]()
 
 The **first** column, displays the voltage across the solar panel as well as its output current (A) and power (W).
 
@@ -89,6 +89,7 @@ The bulk sub state occurs when there is sufficient sunlight and the battery volt
 *Figure 6: Flowchart of the "Perturb and Observe Algorithm"*_____________*Figure 7: Typical "Power vs. Voltage" curve of a solar panel*
   
   ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Power%20and%20Current%20vs.%20Voltage%20of%20the%20solar%20panel%20used%20in%20this%20project.PNG)
+  
 *Figure 8: Power and Current vs. Voltage of the Panel Used in this project*
     
    5. ***Float***. In this charging sub state the voltage on the battery is greater or equal to 2V (which means that the battery is 97.7%, or more, charged) and there is sufficient sunlight to charge the battery. As soon as we enter this state the PWM signal is set to 30%, to allow the solar panel to either charge the battery in a slower rate or keep it fully charged at all times.
