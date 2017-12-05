@@ -41,7 +41,9 @@ The MOSFET selected in the design can withstand both the maximum load current (a
 The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1.5A), whenever the user wants it, as long as the voltage across the 2V sealed lead acid battery is greater or equal to 1.8V (remember that the battery is fully charged at 2.25V). For this purpose, a HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module is used. Note that the the D+ and D- lines of the usb port where connected together with a 10Ohm resistor in order for the port to act as dedicated charging port (DCP) and thus to be recognisable by the phone. The phone used in this project is an Iphone 6.
 ## &#x1F537; `LCD display`
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in Figure 2 below.
+
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/LCD.PNG)
+
 The **first** column, displays the voltage across the solar panel as well as its output current and power (in W).
 
 The **second** column, displays the battery voltage, its charging state (as explained in the "*Circuit Operation* section") together with the percentage of the battery.
