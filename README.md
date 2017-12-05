@@ -53,8 +53,10 @@ The **third** column, shows the PWM of the PMOS of the buck converter (in %) as 
 Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not sufficient battery capacity to charge the phone* is printed on the LCD.
 ## &#x1F537; `Monitoring the system over the internet`
 With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
+## PLACE SCREENSHOT OF THINGSPEAK SITE
 ## &#x1F537; `Python for plotting the solar panel and battery voltages`
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
+## PLACE SCREENSHOT OF PLOT FROM PYTHON
 ## &#x1F537; `Controlling the circuit over the phone`
 The user of this system has the ability to control the circuit over the mobile phone (remotely). This is achieved by using an application named *Blynk* (available both on the App and Google/Android stores) which communicates with the Arduino via the Ethernet Shield. There are three different buttons/options:
 * **Reset** button. If pressed, the user remotely resets the circuit.
