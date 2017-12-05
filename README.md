@@ -97,3 +97,12 @@ The bulk sub state occurs when there is sufficient sunlight and the battery volt
 In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
 ## &#x1F537; `Soldering and Enclosure`
 ## TO BE COMPLETED.
+
+
+
+
+
+<table class="image">
+<caption align="bottom">{{ include.description }}</caption>
+<tr><td><img src="{{ include.url }}" alt="{{ include.description }}"/></td></tr>
+</table>
