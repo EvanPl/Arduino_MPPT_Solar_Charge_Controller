@@ -61,7 +61,7 @@ Note, that in case the user selects to charge a mobile phone then the message *C
 ## &#x1F537; `Monitoring the system over the internet`
 With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
 
-**Note that in order to upload data on Thingspeak the "Blynk.begin(auth)" command (for controlling the curcuit over the phone) must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
+**Note that in order to upload data on Thingspeak, "Blynk.begin(auth)" and "Blynk.run()" commands (for controlling the curcuit over the phone) must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
 ## PLACE SCREENSHOT OF THINGSPEAK SITE
 ## &#x1F537; `Python for plotting the solar panel and battery voltages`
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
