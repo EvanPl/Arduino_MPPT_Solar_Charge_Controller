@@ -3,6 +3,7 @@ An Arduino based Maximum Power Point Tracking (MPPT) solar charge controller cir
 a 2V sealed lead acid battery and driving the following two loads:
 * A 2V LED
 * A Mobile Phone (rated at 5V down to 0.5A)
+
 The user is capable of:
 * Monitoring the system over the internet
 * Controlling the functionily of the circuit over the phone
