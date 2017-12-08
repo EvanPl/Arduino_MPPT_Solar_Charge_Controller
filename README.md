@@ -24,7 +24,10 @@ The user is capable of:
 * Adafruit INA219 Current Sensor Breakout
 * HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module
 * The reset of components can be found from the schematic below
-## PLACE SCHEMATIC PICTURE HERE
+
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Circuit%20Schematic.png)
+
+*Figure 1: Circuit Schematic*
 ## &#x1F537; `Solar Panel and Battery voltages sensing`
 In order to sense the solar panel voltage a voltage divider was used, as this voltage can be greater than 5V which is the maximum voltage that can be applied to the Arduino. On the other hand, the maximum battery voltage, as described in the datasheet, is approximately 2.25V and thus we directly read it using a Kelvin connection (as shown in the schematic) for better accuracy.
 ## &#x1F537; `Buck Converter design`
