@@ -68,7 +68,7 @@ With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **
 ## PLACE SCREENSHOT OF THINGSPEAK SITE
 ## &#x1F537; `Python for plotting the solar panel and battery voltages`
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
-![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Pyhton_Plot.PNG)
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Python%20Plot%20Example.PNG)
 
 *Figure 4: Example of a Python plot*
 ## &#x1F537; `Controlling the circuit over the phone`
