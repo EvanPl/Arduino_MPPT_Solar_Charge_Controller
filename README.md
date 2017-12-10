@@ -92,7 +92,7 @@ State, in which the circuit operates as a maximum power point tracking solar cha
 
    1. ***no_bat***. This is the sub state entered when the measured battery voltage is lower than the minimum one (1.6V). In such case, both      the buck converter and the loads are off, waiting for an appropriate battery to be connected.
 
-   2. ***error/>Max***. In this case, a battery of higher voltage than the maximum (2.25V) is connected to the circuit and thus the same electrical conditions as with the *no_bat* sub state are applied.
+   2. ***error/>Max***. In this case, a battery of higher voltage than 2.5V (0.25V above the maximum) is connected to the circuit and thus the same electrical conditions as with the *no_bat* sub state are applied.
 
    3. ***no_sun***. In this case there is no sufficient sunlight to charge the battery (or remain it fully charged) and thus the buck      converter is OFF. As far as the 2V LED load is concerned, if the battery voltage is between its minimum and maximum values then this load   will turn ON, discharging the battery, something which, apart from the LCD, is indicated by a red LED turned on (powered from the Arduino). Clearly, if the battery is discharged below 1.6V, then we enter *no_bat* sub state, waiting for the solar intensity to increase sufficiently and recharge the battery.
 
