@@ -127,6 +127,9 @@ In this state the circuit charges a mobile phone as explained in the *Phone Char
 Initially, the circuit was constructed and tested on a copper clad, as shown in Figure 9, below, to avoid any circuit board parasitics. Later on, it was transferred to a matrix board, as shown in Figure 10, and finally it was mounted together with the LCD inside the enclosure shown in the beginning.
 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20copper%20clad.PNG)
+
+"Figure 9: The circuit on a copper clad"
+
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20matrix%20board.PNG)
 
-"Figure 9: The circuit on a copper clad"______"Figure 10: The circuit on a matrix board"
+"Figure 10: The circuit on a matrix board"
