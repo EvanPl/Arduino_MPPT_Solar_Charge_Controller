@@ -1,4 +1,7 @@
 # Arduino MPPT Solar Charge Controller
+
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/MPPT%20solar%20charge%20controller%20final%20product.PNG)
+
 An Arduino based Maximum Power Point Tracking (MPPT) solar charge controller circuit, capable of charging
 a 2V sealed lead acid battery and driving the following two loads:
 * A 2V LED
