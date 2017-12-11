@@ -26,7 +26,7 @@ The user is capable of:
 * IC/I2C/TWI Serial 2004 20x4 LCD
 * Adafruit INA219 Current Sensor Breakout
 * HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module
-* The reset of components can be found from the schematic below
+* The rest of components can be found from the schematic below
 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Circuit%20Schematic.png)
 
