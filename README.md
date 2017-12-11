@@ -60,12 +60,16 @@ The **second** column, displays the battery voltage, its charging state (as expl
 
 The **third** column, shows the PWM of the PMOS of the buck converter (in %) as well as the status of the 2V LED load.
 
-Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not sufficient battery capacity to charge the phone* is printed on the LCD.
+Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not suf bat cap* is printed on the LCD.
 ## &#x1F537; `Monitoring the system over the internet`
 With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
 
 **Note that in order to upload data on Thingspeak, "Blynk.begin(auth)" and "Blynk.run()" commands (for controlling the curcuit over the phone) must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
-## PLACE SCREENSHOT OF THINGSPEAK SITE
+
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Example%20of%20Thingspeak%20curve.PNG)
+
+*Figure 3: Example of curve on Thingspeak*
+
 ## &#x1F537; `Python for plotting the solar panel and battery voltages`
 Plotting the solar panel and battery voltages in real time is achieved with Python. Note that, Python is communicating with the Arduino serially (with a baud rate of 115200).
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Python%20Plot%20Example.PNG)
@@ -77,8 +81,12 @@ The user of this system has the ability to control the circuit over the mobile p
 * **MPPT** button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section" )
 * **Phone** button. if pressed and there is sufficient battery capacity the circuit charges a mobile phone.
 
-The Blynk application with those three buttons is shown below.
-## GIVE IMAGE OG BLYNK APP with the 3 buttons
+The Blynk application with those three buttons is shown in Figure 5, below.
+
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Blynk%20app%20buttons.PNG)
+
+*Figure 5: Blynk app buttons*
+
 
 **Note that in order to control the circuit over the phone the commands for monitoring the system online, "ThingSpeak.begin(client)" and  "up_online()", must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
 ## &#x1F537; `Circuit Operation`
@@ -114,15 +122,11 @@ The bulk sub state occurs when there is sufficient sunlight and the battery volt
    
    **Moreover, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**   
 #### 3. Phone Charging
-In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
+In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button on the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
 ## &#x1F537; `Soldering and Enclosure`
-## TO BE COMPLETED.
+Initially, the circuit was constructed and tested on a copper clad, as shown in Figure 9, below, to avoid any circuit board parasitics. Later on, it was transferred to a matrix board, as shown in Figure 10, and finally it was mounted together with the LCD inside the enclosure shown in the beginning.
 
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20copper%20clad.PNG)
+![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20matrix%20board.PNG)
 
-
-
-
-<table class="image">
-<caption align="bottom">{{ include.description }}</caption>
-<tr><td><img src="{{ include.url }}" alt="{{ include.description }}"/></td></tr>
-</table>
+"Figure 9: The circuit on a copper clad"______"Figure 10: The circuit on a matrix board"
