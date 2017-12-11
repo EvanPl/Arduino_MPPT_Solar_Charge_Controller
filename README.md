@@ -32,9 +32,9 @@ The user is capable of:
 
 *Figure 1: Circuit Schematic*
 ## &#x1F537; `Solar Panel and Battery voltages sensing`
-In order to sense the solar panel voltage a voltage divider was used, as this voltage can be greater than 5V which is the maximum voltage that can be applied to the Arduino. On the other hand, the maximum battery voltage, as described in the datasheet, is approximately 2.25V and thus we directly read it using a Kelvin connection (as shown in the schematic) for better accuracy.
+In order to sense the solar panel voltage a voltage divider was used to step it down, as it can be greater than the maximum voltage of 5V that the Arduino can handle and thus it can damage the board. On the other hand, the maximum battery voltage, as described in the datasheet, is approximately 2.25V and thus we directly read it (as shown in the schematic), without using a devider, for better accuracy.
 ## &#x1F537; `Buck Converter design`
-The main part of the MPPT charge controller, is, as seen in the schematic, its buck converter.
+The main part of the MPPT charge controller, is its buck converter.
 For this project, the frequency of that converter was set to be 50kHz. Note that, in general, the
 higher the switching frequency the smaller the size of the converter's capacitor and inductor, but
 the higher the switching losses. At this stage, the calculation of the inductor and the capacitor is described below:
@@ -42,7 +42,7 @@ the higher the switching losses. At this stage, the calculation of the inductor 
 Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is an ideal one (zero ON resistance, infinite OFF resistance and zero switching time), in order to maintain the converter in continuous mode it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Inductor%20Calculation.PNG)
 
-Note that a much bigger inductor than that found from the equation was selected as the inductor size controls the current slope. As a result, a smaller inductor means that the circuit is closer to discontinuous mode (which is undesired here).
+Note that a much bigger inductor than that found from the equation was selected as the inductor size controls the current slope and the bigger it is t, a smaller inductor means that the circuit is closer to discontinuous mode (which is undesired here).
 ### Capacitor Calculation
 The capacitor is chosen to keep the ripple of the output voltage Vo to an acceptable value. Typically, ΔVο (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
