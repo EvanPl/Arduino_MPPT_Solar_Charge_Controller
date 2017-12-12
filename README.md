@@ -47,9 +47,9 @@ Note that a much bigger inductor than that found from the equation was selected,
 The capacitor is chosen to keep the ripple of the output voltage, V1 in Figure 1, to an acceptable value. Typically, ΔV1 (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20size%20calculation.PNG)
 ### MOSFET Selection
-The MOSFET selected for the buck converter can withstand both the maximum load current (approx. 3A) as well as the maximum system voltage which is 10.75V. Moreover, its gate capacitance was selected to be as low as possible to achieve the highest switching performance. Thus, the IRF9530 PMOS was selected. Note that, the same MOSFET was used for the rest of the PMOS devices and the IRF520 model for all the NMOS devices.
+The MOSFET selected for the buck converter can withstand both the maximum load current (approx. 3A) as well as the maximum system voltage which is 10.75V. Moreover, its gate capacitance was selected to be as low as possible to achieve the highest switching performance. Thus, the IRF9530 model was selected. Note that, the IRF520 model was used as the NMOS device.
 ## &#x1F537; `Phone Charger`
-The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1.5A), whenever the user wants it, as long as the voltage across the 2V sealed lead acid battery is greater or equal to 1.8V (remember that the battery is fully charged at 2.25V). For this purpose, a HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module is used. Note that the the D+ and D- lines of the usb port where connected together with a 10Ohm resistor in order for the port to act as dedicated charging port (DCP) and thus to be recognisable by the phone. The phone used in this project is an Iphone 6.
+The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1.5A), whenever the user wants it, as long as the voltage across the 2V sealed lead acid battery is greater or equal to 1.8V (the battery is fully discharged at this voltage). For this purpose, a HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module is used. Note that the the D+ and D- lines of the usb port where connected together with a 10Ohm resistor in order for the port to act as dedicated charging port (DCP) and thus to be recognisable by the phone. The phone used in this project is an Iphone 6.
 ## &#x1F537; `LCD display`
 An IC/I2C/TWI Serial 2004 20x4 LCD is used in this project for displaying circuit data in real time. An example of the the data displayed on the LCD is shown in Figure 2 below.
 
@@ -63,9 +63,9 @@ The **second** column, displays the battery voltage, its charging state (as expl
 
 The **third** column, shows the PWM of the PMOS of the buck converter (in %) as well as the status of the 2V LED load.
 
-Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 2V, otherwise the message *Not suf bat cap* is printed on the LCD.
+Note, that in case the user selects to charge a mobile phone then the message *Charging Phone* is displayed, if the battery voltage is greater or equal to 1.8V, otherwise the message *Not suf bat cap* is printed on the LCD, indicating that the sealed battery needs to be recharged.
 ## &#x1F537; `Monitoring the system over the internet`
-With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** are plotted on ThingSpeeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
+With the use of the Ethernet Shield 2, and ThingSpeeak open IoT platform, the **solar panel output power** is plotted on ThingSpeak open IoT platform on the internet. Note that, the arduino code can be modified to sent more data for plotting online, but this makes the circuit slower, as there is a minimum time required (approximately 15s) for each of those data to be uploaded on the internet.
 
 **Note that in order to upload data on Thingspeak, "Blynk.begin(auth)" and "Blynk.run()" commands (for controlling the curcuit over the phone) must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
 
