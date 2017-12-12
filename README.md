@@ -37,7 +37,7 @@ In order to sense the solar panel voltage a voltage divider was used to step it 
 The main part of the MPPT charge controller, is its buck converter.
 For this project, the frequency of that converter was set to be 50kHz. Note that, in general, the
 higher the switching frequency the smaller the size of the converter's capacitor and inductor, but
-the higher the switching losses. At this stage, the calculation of the inductor and the capacitor is described below:
+the higher the switching losses. At this stage, the calculation of the inductor and the capacitor sizes is described below:
 ### Inductor Calculation
 Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is an ideal one (zero ON resistance, infinite OFF resistance and zero switching time), in order to maintain the converter in continuous mode it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Inductor%20Calculation.PNG)
