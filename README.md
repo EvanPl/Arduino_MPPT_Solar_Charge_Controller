@@ -81,7 +81,7 @@ Plotting the solar panel and battery voltages in real time is achieved with Pyth
 ## &#x1F537; `Controlling the circuit over the phone`
 The user of this system has the ability to control the circuit over the mobile phone (remotely). This is achieved by using an application named *Blynk* (available both on the App and Google/Android stores) which communicates with the Arduino via the Ethernet Shield. There are three different buttons/options:
 * **Reset** button. If pressed, the user remotely resets the circuit.
-* **MPPT** button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section" )
+* **MPPT** button. If pressed, the circuit operates as a MPPT (driving the 2V LED load as explained in the "*Circuit Operation* section")
 * **Phone** button. if pressed and there is sufficient battery capacity the circuit charges a mobile phone.
 
 The Blynk application with those three buttons is shown in Figure 5, below.
