@@ -45,7 +45,7 @@ Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is
 Note that a much bigger inductor than that found from the equation was selected, as the inductor size controls the current slope and the bigger it is the less closer discontinuous mode (which is undesired here) we are.
 ### Capacitor Calculation
 The capacitor is chosen to keep the ripple of the output voltage, V1 in Figure 1, to an acceptable value. Typically, ΔV1 (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
-![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
+![alt text]()
 ### MOSFET Selection
 The MOSFET selected in the design can withstand both the maximum load current (approx. 3A) as well as the maximum voltage which is 10.75V.
 ## &#x1F537; `Phone Charger`
