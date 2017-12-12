@@ -93,19 +93,19 @@ The Blynk application with those three buttons is shown in Figure 5, below.
 
 **Note that in order to control the circuit over the phone the commands for monitoring the system online, "ThingSpeak.begin(client)" and  "up_online()", must be commented out, as monitoring the system online and controlling it over the phone cannot be done simultaneously.**
 ## &#x1F537; `Circuit Operation`
-There are three circuuit states:
+There are three circuit states:
 #### 1. Reset
-State, for resetting the circuit. The circuit enters this state when the user either presses the *Reset* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section)
+State, for resetting the circuit. The circuit enters this state when the user either presses the *Reset* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section).
 #### 2. MPPT
 State, in which the circuit operates as a maximum power point tracking solar charge controller driving a 2V LED load. The circuit enters this state when the user either presses the *MPPT* button on the circuit or on the phone (as mentioned in the *Controlling the circuit over the phone* section). This charge controller operates as follows:
 * The circuit reads the solar panel and battery voltages, the solar panel output current and power (*read_data* function).
 * Then, the circuit decides on which sub state to enter (*mode_select* function). There are five different sub states given below:
 
-   1. ***no_bat***. This is the sub state entered when the measured battery voltage is lower than the minimum one (1.6V). In such case, both      the buck converter and the loads are off, waiting for an appropriate battery to be connected.
+   1. ***no_bat***. This is the sub state entered when the measured battery voltage is lower than the minimum one (1.8V). In such case, both the buck converter and the loads are off, waiting for an appropriate battery to be connected.
 
-   2. ***error/>Max***. In this case, a battery of higher voltage than 2.5V (0.25V above the maximum) is connected to the circuit and thus the same electrical conditions as with the *no_bat* sub state are applied.
+   2. ***error/>Max***. In this case, a battery of higher voltage than 2.5V (0.25V above the maximum of 2.25V, as specified in the datasheet) is connected to the circuit and thus the same electrical conditions as with the *no_bat* sub state are applied.
 
-   3. ***no_sun***. In this case there is no sufficient sunlight to charge the battery (or remain it fully charged) and thus the buck      converter is OFF. As far as the 2V LED load is concerned, if the battery voltage is between its minimum and maximum values then this load   will turn ON, discharging the battery, something which, apart from the LCD, is indicated by a red LED turned on (powered from the Arduino). Clearly, if the battery is discharged below 1.6V, then we enter *no_bat* sub state, waiting for the solar intensity to increase sufficiently and recharge the battery.
+   3. ***no_sun***. In this case there is no sufficient sunlight to charge the battery (or remain it fully charged) and thus the buck converter is OFF. As far as the 2V LED load is concerned, if the battery voltage is between its minimum and maximum values (1.8V and 2.25V respectively), then this load   will turn ON, discharging the battery, which, apart from the LCD, is indicated by a red LED turned on (powered from the Arduino). Clearly, if the battery is discharged below 1.6V, then we enter *no_bat* sub state, waiting for the solar intensity to increase sufficiently and recharge the battery.
 
    4. ***bulk***. This is the first of the two charging sub states and the one where the the MPPT algorithm, **Perturb and observe**, takes place. The purpose of this algorithm (whose flowchart is shown in Figure 3, below) is to continuously change the PWM signal applied to the MOSFET of the buck converter and lock to the one which provides the largest output solar power (which is also being tracked continuously). Figure 4, below, shows a typical power versus voltage curve of a solar panel where the maximum power point is at its peak (between points 2 and 3). Figure 5, shows the power and current versus volgage of the solar panel used in this system, as obtained after putting a variable resistor across its terminal and monitoring its output voltage and current. As it can be seen from the graph, under the tested solar intensity conditions, the maximum power that can be extracted from the panel is 518.3mW.
 
@@ -123,11 +123,11 @@ The bulk sub state occurs when there is sufficient sunlight and the battery volt
    
    **Note that, in both charging states (bulk and Float) a green LED turns on (powered from the Arduino), indicating that the battery is charging.**
    
-   **Moreover, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**   
+   **Moreover, as shown in the code, each time a new PWM signal in the MOSFET of the buck converter is applied, a delay of three seconds follows to ensure that the circuit settles electrically. Also, individual functions are used for uploading data online (*up_online* function), controlling the LED 2V load (*load_state* function),  printing data on the LCD (*lcd_print* function), controlling the LED (powered from the Arduino) charging indicators (*led_out* function) and plotting voltages using python (*print_for_python* function).**   
 #### 3. Phone Charging
 In this state the circuit charges a mobile phone as explained in the *Phone Charger* section. The circuit enters this state when the user either presses the *Phone Charger* button on the circuit or the *Phone* button on the phone (as mentioned in the *Controlling the circuit over the phone* section). Note that, in this state the both the buck converter and the 2V LED load are OFF.
 ## &#x1F537; `Soldering and Enclosure`
-Initially, the circuit was constructed and tested on a copper clad, as shown in Figure 9, below, to avoid any circuit board parasitics. Later on, it was transferred to a matrix board, as shown in Figure 10, and finally it was mounted together with the LCD inside the enclosure shown in the beginning.
+Initially, the circuit was constructed and tested on a copper clad instead of a circuit board, as shown in Figure 9, below, to avoid any parasitics. Later on, it was transferred to a matrix board, as shown in Figure 10, and finally it was mounted together with the LCD inside the enclosure shown in the beginning.
 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20copper%20clad.PNG)
 
@@ -136,3 +136,13 @@ Initially, the circuit was constructed and tested on a copper clad, as shown in 
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/The%20circuit%20on%20a%20matrix%20board.PNG)
 
 *Figure 10: The circuit on a matrix board*
+
+## &#x1F537; `References`
+* V. Energy, "Which solar charge controller: PWM or MPPT," Victron Energy, 2014.
+* Cyclon, "Selection Guide," Enersys-Emea, 2014.
+* Cyclon, "Application Manual," Enersys, 2008.
+* Vishay, "IRF520, SiHF520 Power MOSFET," Vishay, 2017.
+* M. P. M. S.-d.-C. J. G. J. A. E. Durán, "DIFFERENT METHODS TO OBTAIN THE I-V CURVE OF PV MODULES: A REVIEW," IEEE, 2008.
+* S. Solar, "Introduction to 12V battery," Select Solar.
+* K. Muralidhar and S. Susovon, "Modified Perturb and Observe MPPT Algorithm," IEEE, 2005.
+* I. Rectifier, "IRF9530 Power MOSFET," International Rectifier.
