@@ -42,7 +42,7 @@ the higher the switching losses. At this stage, the calculation of the inductor 
 Assuming a 0V diode drop and that the switch (the PMOS of the buck converter) is an ideal one (zero ON resistance, infinite OFF resistance and zero switching time), in order to maintain the converter in continuous mode it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Inductor%20Calculation.PNG)
 
-Note that a much bigger inductor than that found from the equation was selected as the inductor size controls the current slope and the bigger it is t, a smaller inductor means that the circuit is closer to discontinuous mode (which is undesired here).
+Note that a much bigger inductor than that found from the equation was selected, as the inductor size controls the current slope and the bigger it is the less closer discontinuous mode (which is undesired here) we are.
 ### Capacitor Calculation
 The capacitor is chosen to keep the ripple of the output voltage Vo to an acceptable value. Typically, ΔVο (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20Calculation.PNG)
