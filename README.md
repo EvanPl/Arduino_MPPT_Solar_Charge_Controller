@@ -47,7 +47,7 @@ Note that a much bigger inductor than that found from the equation was selected,
 The capacitor is chosen to keep the ripple of the output voltage, V1 in Figure 1, to an acceptable value. Typically, ΔV1 (peak-to-peak output voltage ripple) is limited to about 5% of the nominal output voltage. Thus, it is true that:
 ![alt text](https://github.com/EvanPl/Arduino-MPPT-Solar-Charge-Controller/blob/master/Images/Capacitor%20size%20calculation.PNG)
 ### MOSFET Selection
-The MOSFET selected in the design can withstand both the maximum load current (approx. 3A) as well as the maximum system voltage which is 10.75V.
+The MOSFET selected for the buck converter can withstand both the maximum load current (approx. 3A) as well as the maximum system voltage which is 10.75V. Moreover, its gate capacitance was selected to be as low as possible to achieve the highest switching performance. Thus, the IRF9530 PMOS was selected. Note that, the same MOSFET was used for the rest of the PMOS devices and the IRF520 model for all the NMOS devices.
 ## &#x1F537; `Phone Charger`
 The circuit is capable of charging a mobile phone (at approximately 5V, 0.5A - 1.5A), whenever the user wants it, as long as the voltage across the 2V sealed lead acid battery is greater or equal to 1.8V (remember that the battery is fully charged at 2.25V). For this purpose, a HALJIA 5V 600mA USB DC to DC Booster Power Supply Board Module is used. Note that the the D+ and D- lines of the usb port where connected together with a 10Ohm resistor in order for the port to act as dedicated charging port (DCP) and thus to be recognisable by the phone. The phone used in this project is an Iphone 6.
 ## &#x1F537; `LCD display`
